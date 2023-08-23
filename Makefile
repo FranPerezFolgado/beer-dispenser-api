@@ -2,7 +2,7 @@ build:
 	docker-compose build
 
 up:
-	docker-compose up
+	docker-compose up -d app postgres
 
 down:
 	docker-compose down

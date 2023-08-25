@@ -12,3 +12,6 @@ clean:
 
 up-db:
 	docker-compose up -d postgres
+
+up-app:
+	docker-compose up -d app

@@ -12,4 +12,4 @@ RUN ./mvnw dependency:go-offline
 COPY src ./src
 
 # Command to run the Spring Boot application
-CMD ["./mvnw", "spring-boot:run"]
+CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.profiles=docker"]

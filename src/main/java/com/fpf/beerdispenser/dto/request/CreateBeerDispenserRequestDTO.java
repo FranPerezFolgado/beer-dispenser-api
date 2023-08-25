@@ -5,7 +5,7 @@ import com.fpf.beerdispenser.entities.BeerDispenser;
 import lombok.Builder;
 
 @Builder
-public record CreateBeerDispenserDTO(
+public record CreateBeerDispenserRequestDTO(
         @JsonProperty("flow_volume")
         Double flowVolume
 ) {

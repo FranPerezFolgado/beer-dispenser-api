@@ -9,9 +9,9 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class CreateDispenserResponseDTOTest {
+class CreateBeerDispenserResponseDTOTest {
     /**
-     * Method under test: {@link CreateDispenserResponseDTO#mapFromEntity(BeerDispenser)}
+     * Method under test: {@link CreateBeerDispenserResponseDTO#mapFromEntity(BeerDispenser)}
      */
     @Test
     void testMapFromEntity() {
@@ -21,7 +21,7 @@ class CreateDispenserResponseDTOTest {
         beerDispenser.setStatus("Status");
         beerDispenser.setUpdatedAt(LocalDate.of(1970, 1, 1).atStartOfDay());
         beerDispenser.setUsages(new ArrayList<>());
-        CreateDispenserResponseDTO dispenserResponseDTO = CreateDispenserResponseDTO.mapFromEntity(beerDispenser);
+        CreateBeerDispenserResponseDTO dispenserResponseDTO = CreateBeerDispenserResponseDTO.mapFromEntity(beerDispenser);
         assertEquals(beerDispenser.getFlowVolume(), dispenserResponseDTO.flowVolume());
         assertEquals(beerDispenser.getId().toString(), dispenserResponseDTO.id());
     }

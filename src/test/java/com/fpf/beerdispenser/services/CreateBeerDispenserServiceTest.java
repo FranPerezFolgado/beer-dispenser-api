@@ -1,6 +1,6 @@
 package com.fpf.beerdispenser.services;
 
-import com.fpf.beerdispenser.dto.request.CreateBeerDispenserDTO;
+import com.fpf.beerdispenser.dto.request.CreateBeerDispenserRequestDTO;
 import com.fpf.beerdispenser.entities.BeerDispenser;
 import com.fpf.beerdispenser.respositories.BeerDispenserRepository;
 import org.junit.jupiter.api.Test;
@@ -29,7 +29,7 @@ class CreateBeerDispenserServiceTest {
     private CreateBeerDispenserService createBeerDispenserService;
 
     /**
-     * Method under test: {@link CreateBeerDispenserService#createDispenser(CreateBeerDispenserDTO)}
+     * Method under test: {@link CreateBeerDispenserService#createDispenser(CreateBeerDispenserRequestDTO)}
      */
     @Test
     void testCreateDispenser() {
@@ -41,7 +41,7 @@ class CreateBeerDispenserServiceTest {
         beerDispenser.setUsages(new ArrayList<>());
         when(beerDispenserRepository.save(Mockito.any())).thenReturn(beerDispenser);
         assertEquals(10.0d,
-                createBeerDispenserService.createDispenser(new CreateBeerDispenserDTO(10.0d)).flowVolume().doubleValue());
+                createBeerDispenserService.createDispenser(new CreateBeerDispenserRequestDTO(10.0d)).flowVolume().doubleValue());
         verify(beerDispenserRepository).save(Mockito.any());
     }
 }

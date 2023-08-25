@@ -5,15 +5,15 @@ import com.fpf.beerdispenser.entities.BeerDispenser;
 import lombok.Builder;
 
 @Builder
-public record CreateDispenserResponseDTO
+public record CreateBeerDispenserResponseDTO
         (
                 String id,
                 @JsonProperty("flow_volume")
                 Double flowVolume
-        ){
+        ) {
 
-    public static CreateDispenserResponseDTO mapFromEntity(BeerDispenser beerDispenser){
-        return CreateDispenserResponseDTO.builder()
+    public static CreateBeerDispenserResponseDTO mapFromEntity(BeerDispenser beerDispenser) {
+        return CreateBeerDispenserResponseDTO.builder()
                 .id(String.valueOf(beerDispenser.getId()))
                 .flowVolume(beerDispenser.getFlowVolume())
                 .build();

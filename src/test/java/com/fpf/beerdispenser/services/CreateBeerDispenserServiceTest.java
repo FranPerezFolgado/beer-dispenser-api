@@ -2,6 +2,7 @@ package com.fpf.beerdispenser.services;
 
 import com.fpf.beerdispenser.dto.request.CreateBeerDispenserRequestDTO;
 import com.fpf.beerdispenser.entities.BeerDispenser;
+import com.fpf.beerdispenser.enums.BeerDispenserStatusEnum;
 import com.fpf.beerdispenser.respositories.BeerDispenserRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -36,7 +37,7 @@ class CreateBeerDispenserServiceTest {
         BeerDispenser beerDispenser = new BeerDispenser();
         beerDispenser.setFlowVolume(10.0d);
         beerDispenser.setId(UUID.randomUUID());
-        beerDispenser.setStatus("Status");
+        beerDispenser.setStatus(BeerDispenserStatusEnum.CLOSE);
         beerDispenser.setUpdatedAt(LocalDate.of(1970, 1, 1).atStartOfDay());
         beerDispenser.setUsages(new ArrayList<>());
         when(beerDispenserRepository.save(Mockito.any())).thenReturn(beerDispenser);

@@ -1,6 +1,7 @@
 package com.fpf.beerdispenser.dto.response;
 
 import com.fpf.beerdispenser.entities.BeerDispenser;
+import com.fpf.beerdispenser.enums.BeerDispenserStatusEnum;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
@@ -18,7 +19,7 @@ class CreateBeerDispenserResponseDTOTest {
         BeerDispenser beerDispenser = new BeerDispenser();
         beerDispenser.setFlowVolume(10.0d);
         beerDispenser.setId(UUID.randomUUID());
-        beerDispenser.setStatus("Status");
+        beerDispenser.setStatus(BeerDispenserStatusEnum.CLOSE);
         beerDispenser.setUpdatedAt(LocalDate.of(1970, 1, 1).atStartOfDay());
         beerDispenser.setUsages(new ArrayList<>());
         CreateBeerDispenserResponseDTO dispenserResponseDTO = CreateBeerDispenserResponseDTO.mapFromEntity(beerDispenser);
